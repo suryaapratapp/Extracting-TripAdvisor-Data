@@ -4,4 +4,4 @@ The purpose of this project to extract and analyze hotel reviewers data from Tri
 User can change hotel city or hotel name as per his needs by changing couple of lines in code (mentioned in the code itself).
 
 THE EXTRACTED FIELDS ARE:
-"Hotel Name", "Reviewer", "Review Date", "Review Rating", "Review Title", "Review"
+"Reviewer", "Review Date", "Review Rating", "Review Title", "Review"
