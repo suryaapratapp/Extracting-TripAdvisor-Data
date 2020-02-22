@@ -1,7 +1,8 @@
+'''S dot pratap at liverpool dot ac dot uk | Surya Pratap'''
 '''importing libraries'''
 
 
-website = "https://www.tripadvisor.co.uk/Hotels-g186338-London_England-Hotels.html"
+'''website = "https://www.tripadvisor.co.uk/Hotels-g186338-London_England-Hotels.html"'''
 from bs4 import BeautifulSoup
 import re
 from requests_html import HTMLSession
