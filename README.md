@@ -9,3 +9,18 @@ User can change hotel city or hotel name as per his needs by changing couple of 
 THE EXTRACTED FIELDS ARE:
 "Reviewer", "Review Date", "Review Rating", "Review Title", "Review"
 *****
+## Requirements
+
+Python 3 or greater
+Good Internet connection :D
+
+## Libraries to install
+
+Download and install these libraries before running the code:
+
+pip install bs4
+pip install pandas
+pip install numpy
+
+## Author
+[Surya Pratap](https://github.com/suryaapratapp)
