@@ -12,15 +12,18 @@ THE EXTRACTED FIELDS ARE:
 ## Requirements
 
 Python 3 or greater
+
 Good Internet connection :D
 
 ## Libraries to install
 
 Download and install these libraries before running the code:
-
+'''
 pip install bs4
-pip install pandas
-pip install numpy
 
+pip install pandas
+
+pip install numpy
+'''
 ## Author
 [Surya Pratap](https://github.com/suryaapratapp)
