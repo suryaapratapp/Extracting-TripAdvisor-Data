@@ -13,8 +13,6 @@ THE EXTRACTED FIELDS ARE:
 
 Python 3 or greater
 
-Good Internet connection :D
-
 ## Libraries to install
 
 Download and install these libraries before running the code:
