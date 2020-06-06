@@ -61,7 +61,7 @@ for theurl in WebSites:
     # print("Hotel Name = " + ''.join(hotel_name),"\nTotal Reviews = " + ''.join(totalreview),"\nOverall Rating = " + ''.join(total_rating))
 df = pd.DataFrame({"Reviewer":names, "Review Date":date, "Review Rating":rating, "Review Title":title, "Review":review})    #list to csv columns
 df.dropna(how="all", inplace=True)      #remove blank rows
-df.to_csv('tripadvisor#1.csv',index=False, encoding="utf-8")      #save data to csv
+df.to_csv('output.csv',index=False, encoding="utf-8")      #save data to csv
 
 
 
