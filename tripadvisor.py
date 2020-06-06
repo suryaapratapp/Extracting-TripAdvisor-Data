@@ -1,6 +1,6 @@
 '''S dot Pratap at liverpool dot ac dot uk | Surya Pratap'''
 '''This code is to extract reviews and related details of a single hotel from tripadvisor.com, all you need to change is link @line19.
-Also, make sure to change url from "https://" and till ".html"
+Also, make sure to change url from "https://" upto ".html"
 NOTE: There is "{}" available inside the url, please make sure to write your URL same as this way. Example: Reviews-or{}-'''
 
 '''importing libraries'''
