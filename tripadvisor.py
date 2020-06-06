@@ -1,4 +1,8 @@
 '''S dot Pratap at liverpool dot ac dot uk | Surya Pratap'''
+'''This code is to extract reviews and related details of a single hotel from tripadvisor.com, all you need to change is link @line19.
+Also, make sure to change url from "https://" and till ".html"
+NOTE: There is "{}" available inside the url, please make sure to write your URL same as this way. Example: Reviews-or{}-'''
+
 '''importing libraries'''
 from bs4 import BeautifulSoup
 import os
@@ -34,30 +38,30 @@ for theurl in WebSites:
 
     for x in range(3, 8):
         ii = 2
-        Reviewer = tree.xpath("//*[@id='component_13']/div/div[3]/div[%d]/div[1]/div/div[2]/span/a/text()"%x)   #reviewer name
+        Reviewer = tree.xpath("//*[@id='component_15']/div/div[3]/div[%d]/div[1]/div/div[2]/span/a/text()"%x)   #reviewer name
         Reviewer = ''.join(Reviewer)
-        Review = tree.xpath("//*[@id='component_13']/div/div[3]/div[%d]/div[%d]/div[3]/div[1]/div[1]/q/span/text()"%(x, ii))
+        Review = tree.xpath("//*[@id='component_15']/div/div[3]/div[%d]/div[%d]/div[3]/div[1]/div[1]/q/span/text()"%(x, ii))
         Review = ''.join(Review)
-        ReviewTitle = tree.xpath("//*[@id='component_13']/div/div[3]/div[%d]/div[%d]/div[2]/a/span/span/text()"%(x,ii))
+        ReviewTitle = tree.xpath("//*[@id='component_15']/div/div[3]/div[%d]/div[%d]/div[2]/a/span/span/text()"%(x,ii))
         ReviewTitle = ''.join(ReviewTitle)
-        RatingDate = tree.xpath("//*[@id='component_13']/div/div[3]/div[%d]/div[1]/div/div[2]/span/text()"%x)
+        RatingDate = tree.xpath("//*[@id='component_15']/div/div[3]/div[%d]/div[1]/div/div[2]/span/text()"%x)
         RatingDate = ''.join(RatingDate)
         if Review == []:        #if the list is empty
             ii+=1
-            full_review = tree.xpath("//*[@id='component_13']/div/div[3]/div[%d]/div[%d]/div[3]/div[1]/div[1]/q/span/text()" %(x, ii))
+            full_review = tree.xpath("//*[@id='component_15']/div/div[3]/div[%d]/div[%d]/div[3]/div[1]/div[1]/q/span/text()" %(x, ii))
         ii = 2
         if ReviewTitle == []:
             ii+=1
-            ReviewTitle = tree.xpath("//*[@id='component_13']/div/div[3]/div[%d]/div[%d]/div[2]/a/span/span/text()" % (x, ii))
+            ReviewTitle = tree.xpath("//*[@id='component_15']/div/div[3]/div[%d]/div[%d]/div[2]/a/span/span/text()" % (x, ii))
         names.append(Reviewer)
         review.append(Review)
         title.append(ReviewTitle)
-        date.append(RatingDate)
+        date.append(RatingDate.replace("wrote a review", ""))
 
     # print("Hotel Name = " + ''.join(hotel_name),"\nTotal Reviews = " + ''.join(totalreview),"\nOverall Rating = " + ''.join(total_rating))
 df = pd.DataFrame({"Reviewer":names, "Review Date":date, "Review Rating":rating, "Review Title":title, "Review":review})    #list to csv columns
 df.dropna(how="all", inplace=True)      #remove blank rows
-df.to_csv('tripadvisor.csv',index=False, encoding="utf-8")      #save data to csv
+df.to_csv('tripadvisor#1.csv',index=False, encoding="utf-8")      #save data to csv
 
 
 
